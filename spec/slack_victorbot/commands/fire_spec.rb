@@ -6,7 +6,7 @@ describe SlackVictorbot::Commands::Fire do
   subject { app }
 
   it 'returns It works!' do
-    expect(message: "#{SlackRubyBot.config.user} fire", channel: 'channel')
+    expect(message: "#{SlackRubyBot.config.user} fire It works!", channel: 'channel')
       .to respond_with_slack_message('It works!')
   end
 end

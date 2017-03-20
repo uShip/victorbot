@@ -3,6 +3,8 @@ require 'rest-client'
 module SlackVictorbot
   module Commands
     class Fire < SlackRubyBot::Commands::Base
+      extend SlackVictorbot::ClientHelper
+
       help do
         command 'fire <message>' do
           desc 'Triggers a Victorops incident with the <message>'
@@ -12,26 +14,9 @@ module SlackVictorbot
       end
 
       match /fire (?<message>.+)$/i do |client, data, match|
-        headers = {
-          content_type:  'json',
-          accept:        'json',
-          'X-VO-Api-Id'  => ENV['VICTOROPS_API_ID'],
-          'X-VO-Api-Key' => ENV['VICTOROPS_API_KEY']
-        }
-
-        payload = {
-          summary:  match[:message],
-          details:  match[:message],
-          userName: ENV['VICTOROPS_USER'],
-          targets: [
-            {
-              type: 'EscalationPolicy',
-              slug: ENV['VICTOROPS_TEAM']
-            }
-          ]
-        }.to_json
-
-        response = RestClient.post ENV['VICTOROPS_API_URL'], payload, headers
+        response = RestClient.post ENV['VICTOROPS_API_URL'],
+                                   payload(match[:message]),
+                                   headers
         if response.code == 200
           response_body = JSON.parse response.body
           client.say channel: data.channel,
@@ -41,5 +26,6 @@ module SlackVictorbot
         end
       end
     end
+
   end
 end

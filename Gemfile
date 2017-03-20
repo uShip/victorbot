@@ -4,10 +4,12 @@ source 'https://rubygems.org'
 gem 'celluloid-io',   '~> 0.17.3'
 gem 'dotenv',         '~> 2.2.0'
 gem 'puma',           '~> 3.8.2'
+gem 'rest-client',    '~> 2.0.1'
 gem 'sinatra',        '~> 1.4.8'
 gem 'slack-ruby-bot', '~> 0.10.1'
 
 group :development, :test do
+  gem 'pry',     '~> 0.10.4'
   gem 'rake',    '~> 12.0.0'
   gem 'foreman', '~> 0.83.0'
 end

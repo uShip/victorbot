@@ -6,11 +6,9 @@ module SlackVictorbot
       extend SlackVictorbot::ClientHelper
 
       help do
-        command 'fire <message>' do
-          desc 'Triggers a Victorops incident with the <message>'
-          long_desc "To create a new incident in Victorops and alert the on-call engineer(s),\n \
-            say '@victorbot fire <message>'"
-        end
+        title 'fire'
+        desc 'Triggers a Victorops incident with the <message>'
+        long_desc "To create a new incident in Victorops and alert the on-call engineer(s),\nsay '@victorbot fire <message>'"
       end
 
       match /fire (?<message>.+)$/i do |client, data, match|

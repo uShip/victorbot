@@ -11,9 +11,9 @@ module SlackVictorbot
         long_desc "To create a new incident in Victorops and alert the on-call engineer(s),\nsay '@victorbot fire <message>'"
       end
 
-      match /fire (?<message>.+)$/i do |client, data, match|
+      command 'fire' do |client, data, match|
         response = RestClient.post ENV['VICTOROPS_API_URL'],
-                                   payload(match[:message]),
+                                   payload(match[:expression]),
                                    headers
         if response.code == 200
           response_body = JSON.parse response.body

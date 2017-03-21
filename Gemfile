@@ -9,9 +9,9 @@ gem 'sinatra',        '~> 1.4.8'
 gem 'slack-ruby-bot', '~> 0.10.1'
 
 group :development, :test do
+  gem 'foreman', '~> 0.83.0'
   gem 'pry',     '~> 0.10.4'
   gem 'rake',    '~> 12.0.0'
-  gem 'foreman', '~> 0.83.0'
 end
 
 group :test do

@@ -1,4 +1,5 @@
 module SlackVictorbot
+  # Public: Helpers for RestClient to talk to Victorops
   module ClientHelper
     def headers
       {
@@ -14,12 +15,7 @@ module SlackVictorbot
         summary:  message,
         details:  message,
         userName: ENV['VICTOROPS_USER'],
-        targets: [
-          {
-            type: 'EscalationPolicy',
-            slug: ENV['VICTOROPS_TEAM']
-          }
-        ]
+        targets: [{ type: 'EscalationPolicy', slug: ENV['VICTOROPS_TEAM'] }]
       }.to_json
     end
   end

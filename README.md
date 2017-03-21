@@ -25,7 +25,7 @@ The following environment variables are required for SlackVictorbot to work:
 
 ## Testing
 
-SlackVictorbot uses a test harness wired with [RSpec](https://github.com/rspec/rspec), [VCR](https://github.com/vcr/vcr), and [Webmock](https://github.com/bblimke/webmock). The use if VCR and Webmock means that the first time the specs are run, they'll save a cassette to `spec/fixtures/vcr_cassettes` and then subsequent requests will be mocked and use that fixture file. If there is any sensitive data that needs to be sanitized from the fixture file, add that to the `VCR.configure` block in `spec/spec_helper.rb`.
+SlackVictorbot uses a test harness wired with [RSpec](https://github.com/rspec/rspec), [VCR](https://github.com/vcr/vcr), and [Webmock](https://github.com/bblimke/webmock). The use of VCR and Webmock means that the first time the specs are run, they'll save a cassette to `spec/fixtures/vcr_cassettes` and then subsequent requests will be mocked and use that fixture file. If there is any sensitive data that needs to be sanitized from the fixture file, add that to the `VCR.configure` block in `spec/spec_helper.rb`.
 
 To run the specs, you can either run them directly from your machine, or use Docker.
 

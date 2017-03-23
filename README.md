@@ -14,14 +14,14 @@ If you want to just run the bot outside of a container, you can use [Foreman](ht
 
 The following environment variables are required for SlackVictorbot to work:
 
-| Variable          | Description                                  |
-| ----------------- | -------------------------------------------- |
-| SLACK_API_TOKEN   | Token for interacting with the Slack API     |
-| VICTOROPS_API_ID  | Your Victorops user's API ID                 |
-| VICTOROPS_API_KEY | Your Victorops user's API key                |
-| VICTOROPS_API_URL | The URL of the Victorops API                 |
-| VICTOROPS_USER    | Your Victorops username                      |
-| VICTOROPS_TEAM    | Your Victorops team to escalate incidents to |
+| Variable          | Description                                     |
+| ----------------- | ----------------------------------------------- |
+| SLACK_API_TOKEN   | Token for interacting with the Slack API        |
+| VICTOROPS_API_ID  | Your Victorops user's API ID                    |
+| VICTOROPS_API_KEY | Your Victorops user's API key                   |
+| VICTOROPS_API_URL | The URL of the Victorops API                    |
+| VICTOROPS_USER    | Your Victorops username                         |
+| VICTOROPS_TEAM    | Default Victorops team to escalate incidents to |
 
 ## Testing
 

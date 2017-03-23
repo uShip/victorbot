@@ -10,7 +10,7 @@ module SlackVictorbot
       }
     end
 
-    def payload(message, team="DevOps")
+    def payload(message, team="#{ENV['VICTOROPS_TEAM']}")
       {
         summary:  message,
         details:  message,

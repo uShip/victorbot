@@ -6,11 +6,6 @@ module SlackVictorbot
     class Teams < SlackRubyBot::Commands::Base
       extend SlackVictorbot::ClientHelper
 
-      help do
-        title 'teams'
-        desc 'List the teams available in Victorops'
-      end
-
       command 'teams' do |client, data, _match|
         response = RestClient.get "#{ENV['VICTOROPS_API_URL']}/team",
                                    headers

@@ -6,12 +6,6 @@ module SlackVictorbot
     class Fire < SlackRubyBot::Commands::Base
       extend SlackVictorbot::ClientHelper
 
-      help do
-        title 'fire'
-        desc 'Triggers a Victorops incident with the <message>'
-        long_desc "To create a new incident in Victorops and alert the on-call engineer(s),\nsay '@victorbot fire <message>'" # rubocop:disable Metrics/LineLength
-      end
-
       command 'fire' do |client, data, match|
         response = RestClient.post "#{ENV['VICTOROPS_API_URL']}/incidents",
                                    payload(match[:expression]),

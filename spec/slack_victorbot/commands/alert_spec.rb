@@ -1,4 +1,4 @@
-describe SlackVictorbot::Commands::SendAlert do
+describe SlackVictorbot::Commands::Alert do
   vcr_options = { cassette_name: 'victorops', record: :new_episodes }
 
   def app
@@ -9,7 +9,7 @@ describe SlackVictorbot::Commands::SendAlert do
 
   context 'successfully creates and incident', vcr: vcr_options do
     it 'alerts a specified team' do
-      expect(message: "#{SlackRubyBot.config.user} send alert \"Help me!\" to IT",
+      expect(message: "#{SlackRubyBot.config.user} alert \"Help me!\" to IT",
              channel: 'channel')
         .to respond_with_slack_message(/sent alert to IT team/i)
     end

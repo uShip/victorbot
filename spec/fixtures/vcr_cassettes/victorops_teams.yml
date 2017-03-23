@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.victorops.com/api-public/v1/teams
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.4.0p0
+      Content-Type:
+      - application/json
+      X-Vo-Api-Id:
+      - "<API_ID>"
+      X-Vo-Api-Key:
+      - "<API_KEY>"
+      Host:
+      - api.victorops.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 23 Mar 2017 19:27:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '41'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4bf1c9649dbf7458efba52cc706933ce1490297253; expires=Fri, 23-Mar-18
+        19:27:33 GMT; path=/; domain=.victorops.com; HttpOnly
+      Vary:
+      - Accept,Accept-Encoding
+      Request-Time:
+      - '2'
+      Content-Encoding:
+      - gzip
+      Access-Control-Allow-Origin:
+      - https://portal.victorops.com
+      Access-Control-Allow-Headers:
+      - ''
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 3443c9e91d5e5855-DFW
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKtWSi0qyi9SslLKyy9RSMsvzUtRqgUA8EbSeRUAAAA=
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 19:27:33 GMT
+- request:
+    method: get
+    uri: https://api.victorops.com/api-public/v1/team
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.4.0p0
+      Content-Type:
+      - application/json
+      X-Vo-Api-Id:
+      - "<API_ID>"
+      X-Vo-Api-Key:
+      - "<API_KEY>"
+      Host:
+      - api.victorops.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 23 Mar 2017 19:27:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '355'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=db3b2eb08c908cd4a6c33412e5123d3cf1490297275; expires=Fri, 23-Mar-18
+        19:27:55 GMT; path=/; domain=.victorops.com; HttpOnly
+      Vary:
+      - Accept,Accept-Encoding
+      Request-Time:
+      - '45'
+      Content-Encoding:
+      - gzip
+      Access-Control-Allow-Origin:
+      - https://portal.victorops.com
+      Access-Control-Allow-Headers:
+      - ''
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 3443ca721885592d-DFW
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAALXUQU+DMBgG4P/SM4ZNZ4zcdDvoSRPxZMxS2IdrLC3hKySL8b/LoJQ2kKwxcCItb1+eED4+fsgegWfvJScRCWnBrooq4SwN63WogOYh1FCepAASkH0OeQIlXg6HOtkcEjSHJm3VIK++3J0uvZWVUCS6uQ5IcwuZFCTaNAuGO8hoxVXcPIJEGeUIv8FFOFNeZKbG2Od4YLY1DtD2rf7NO0AtC/QidtExcwf1S1uhqabS4d7Nw02onzWhE9DHB0vZNi3wRlMpsOJeyi46hm77Cm01lQ53PQtXAfp9oefgmKqPa6heLcAs6CkHofy+1D485r4ONZpsFTvszVzjdb76zld7nRqwuCsZJky3OuTVLGSUtDjKEv1+tSY9Zr81t550kYbb3QuMHqqSpd+cioOf3cQn8HZVr7f3HP7tTHxa4pEVnvguPEU3NQZudhz2vQf78w8bVasGnAcAAA==
+    http_version: 
+  recorded_at: Thu, 23 Mar 2017 19:27:55 GMT
+recorded_with: VCR 3.0.3

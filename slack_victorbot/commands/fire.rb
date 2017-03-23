@@ -13,7 +13,7 @@ module SlackVictorbot
       end
 
       command 'fire' do |client, data, match|
-        response = RestClient.post ENV['VICTOROPS_API_URL'],
+        response = RestClient.post "#{ENV['VICTOROPS_API_URL']}/incidents",
                                    payload(match[:expression]),
                                    headers
         if response.code == 200

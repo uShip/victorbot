@@ -1,5 +1,5 @@
 describe SlackVictorbot::Commands::Fire do
-  vcr_options = { cassette_name: 'victorops' }
+  vcr_options = { cassette_name: 'victorops', record: :new_episodes }
 
   def app
     SlackVictorbot::Bot.instance

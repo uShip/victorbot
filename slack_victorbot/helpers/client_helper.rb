@@ -10,12 +10,12 @@ module SlackVictorbot
       }
     end
 
-    def payload(message)
+    def payload(message, team="DevOps")
       {
         summary:  message,
         details:  message,
         userName: ENV['VICTOROPS_USER'],
-        targets: [{ type: 'EscalationPolicy', slug: ENV['VICTOROPS_TEAM'] }]
+        targets: [{ type: 'EscalationPolicy', slug: team }]
       }.to_json
     end
   end

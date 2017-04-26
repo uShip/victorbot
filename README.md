@@ -52,3 +52,4 @@ To run the specs, you can either run them directly from your machine, or use Doc
 ## Deployment
 
 SlackVictorbot can be deployed as a normal Ruby application or in a containerized environment. The biggest thing to ensure is that the environment variables listed above are available when the application or container is started.
+

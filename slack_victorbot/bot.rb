@@ -14,6 +14,8 @@ module SlackVictorbot
         long_desc <<~DESC
           Creates a new incident in Victorops and sends it to the specified team.
           Find teams with @victorbot teams
+
+          Example: @<botname> alert <message> to <team>
         DESC
       end
 

@@ -8,7 +8,7 @@ Thread.abort_on_exception = true
 Thread.new do
   begin
     SlackVictorbot::Bot.run
-  rescue Exception => e
+  rescue StandardError => e
     STDERR.puts "ERROR: #{e}"
     STDERR.puts e.backtrace
     raise e

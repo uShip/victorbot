@@ -1,0 +1,75 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: victorbot
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: victorbot
+        group: victorbot
+    spec:
+      containers:
+        - name: victorbot
+          image: uship/victorbot:v2
+          command: ["bundle", "exec", "foreman", "start"]
+          env:
+            - name: SLACK_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: victorbot
+                  key: slack-api-token
+            - name: VICTOROPS_API_ID
+              valueFrom:
+                secretKeyRef:
+                  name: victorbot
+                  key: victorops-api-id
+            - name: VICTOROPS_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: victorbot
+                  key: victorops-api-key
+            - name: VICTOROPS_API_URL
+              valueFrom:
+                secretKeyRef:
+                  name: victorbot
+                  key: victorops-api-url
+            - name: VICTOROPS_USER
+              valueFrom:
+                secretKeyRef:
+                  name: victorbot
+                  key: victorops-user
+            - name: VICTOROPS_TEAM
+              valueFrom:
+                secretKeyRef:
+                  name: victorbot
+                  key: victorops-team
+          ports:
+            - containerPort: 5000
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: '/'
+              port: 5000
+              scheme: HTTP
+            initialDelaySeconds: 300
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: victorbot
+  labels:
+    app: victorbot
+    group: victorbot
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5000
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: victorbot

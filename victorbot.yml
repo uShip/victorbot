@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: victorbot
-          image: uship/victorbot:v2
+          image: uship/victorbot:v3
           command: ["bundle", "exec", "foreman", "start"]
           env:
             - name: SLACK_API_TOKEN

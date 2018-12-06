@@ -1,4 +1,6 @@
 require 'slack-ruby-bot'
+require 'slack_victorbot/version'
+require 'slack_victorbot/about'
 require 'slack_victorbot/helpers/client_helper'
 require 'slack_victorbot/commands/fire'
 require 'slack_victorbot/commands/alert'

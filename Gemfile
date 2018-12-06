@@ -6,7 +6,7 @@ gem 'celluloid-io',   '~> 0.17.3'
 gem 'dotenv',         '~> 2.2.0'
 gem 'rest-client',    '~> 2.0.1'
 gem 'sinatra',        '~> 1.4.8'
-gem 'slack-ruby-bot', '~> 0.10.1'
+gem 'slack-ruby-bot', '~> 0.11.2'
 gem 'unicorn',        '~> 5.3.1'
 
 group :development, :test do
